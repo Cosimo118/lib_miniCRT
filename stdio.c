@@ -112,7 +112,7 @@ static int close(int fd)
     asm("movl $6,%%eax      \n\t"
         "movl %1,%%ebx      \n\t"
         "int $0x80          \n\t"
-        "movl %%weax,%0     \n\t":
+        "movl %%eax,%0     \n\t":
         "=m"(ret):"m"(fd));
     return ret;
 }
